@@ -1,0 +1,314 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academia Online</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Font Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header / Navbar -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-8xl mx-auto px-6 py-3 flex items-center justify-between">
+            <!-- Logo & Title -->
+            <div class="flex items-center space-x-3">
+                <i class="fa-solid fa-graduation-cap text-3xl text-slate-700"></i>
+                <div class="font-bold text-slate-800 text-sm leading-tight uppercase tracking-wider">
+                    SinerCorp
+                </div>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex space-x-8 font-bold text-sm text-slate-700 uppercase tracking-wide">
+                <a href="#" class="border-b-2 border-slate-700 pb-1">Inicio</a>
+                <a href="#" class="hover:text-slate-900 transition">Catálogo</a>
+                <a href="#" class="hover:text-slate-900 transition">Progreso</a>
+            </nav>
+
+            <!-- Search Bar & User Profile -->
+            <div class="flex items-center space-x-6">
+                <!-- Search -->
+                <div class="relative hidden sm:block">
+                    <input type="text" placeholder="buscar" class="bg-gray-200 text-gray-600 rounded-full pl-4 pr-10 py-1.5 text-sm focus:outline-none w-48">
+                    <i class="fa-solid fa-magnifying-glass absolute right-3 top-2.5 text-gray-400 text-sm"></i>
+                </div>
+
+                <!-- User Dropdown -->
+                <div class="flex items-center space-x-2 cursor-pointer">
+                    <span class="font-bold text-sm uppercase text-slate-800">Luis N.</span>
+                    <img src="https://i.pravatar.cc/100?img=33" alt="Avatar" class="w-9 h-9 rounded-full object-cover">
+                    <i class="fa-solid fa-caret-down text-xs text-slate-600"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-8xl mx-auto px-6 py-8">
+
+        <!-- Banner Hero / Curso Destacado -->
+        <section class="relative bg-gradient-to-r from-slate-900 via-slate-800 to-cyan-900 text-white rounded-3xl p-8 md:p-12 shadow-xl mb-10 overflow-hidden">
+            <!-- Notification Icons (Top Right) -->
+            <div class="absolute top-6 right-6 flex space-x-3 z-10">
+                <div class="relative bg-slate-700/60 p-2.5 rounded-full backdrop-blur-md cursor-pointer hover:bg-slate-700">
+                    <i class="fa-solid fa-bell text-gray-200 text-sm"></i>
+                    <span class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.2 rounded-full">1</span>
+                </div>
+                <div class="relative bg-slate-700/60 p-2.5 rounded-full backdrop-blur-md cursor-pointer hover:bg-slate-700">
+                    <i class="fa-solid fa-bell text-gray-200 text-sm"></i>
+                    <span class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.2 rounded-full">1</span>
+                </div>
+            </div>
+
+            <!-- Arrows -->
+            <button class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white text-2xl px-2 py-4">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white text-2xl px-2 py-4">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+            <!-- Banner Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center px-6">
+                <!-- Left Text Content -->
+                <div class="lg:col-span-7 space-y-4">
+                    <span class="text-sm font-semibold tracking-wider uppercase text-gray-300">Curso Destacado:</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">INTRODUCCIÓN A LA IA</h2>
+                    <p class="text-gray-300 text-sm leading-relaxed max-w-lg">
+                        Lorem ipsum dolor sit amet, consectetur never adipiscing elit, sed de eiusmod leson cumpoit incididunt et essident oemapos.
+                    </p>
+                    <div class="pt-2">
+                        <a href="#" class="inline-block bg-sky-700 hover:bg-sky-600 text-white text-xs font-bold uppercase tracking-wider py-3 px-8 rounded-lg shadow-md transition">
+                            Inscribirse
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Illustration -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-sm">
+                        <!-- Laptop Graphic Placeholder/Illustration -->
+                        <div class="bg-gradient-to-tr from-cyan-500/20 to-blue-500/20 p-6 rounded-2xl border border-white/10 backdrop-blur-sm shadow-2xl flex flex-col items-center">
+                            <i class="fa-solid fa-laptop-code text-7xl text-cyan-300 my-4"></i>
+                            <div class="flex space-x-3 text-cyan-200 text-xs">
+                                <span class="bg-slate-800/80 px-2 py-1 rounded">&lt;/&gt;</span>
+                                <span class="bg-slate-800/80 px-2 py-1 rounded"><i class="fa-solid fa-brain"></i></span>
+                                <span class="bg-slate-800/80 px-2 py-1 rounded"><i class="fa-solid fa-robot"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dots Pagination -->
+            <div class="flex justify-center space-x-2 mt-8">
+                <span class="w-2.5 h-2.5 bg-gray-400 rounded-full"></span>
+                <span class="w-2.5 h-2.5 bg-gray-400 rounded-full"></span>
+                <span class="w-2.5 h-2.5 bg-gray-300/50 rounded-full"></span>
+            </div>
+        </section>
+
+        <!-- Course Cards Grid -->
+        <section class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+            <!-- Card 1 -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col justify-between border border-gray-100 relative">
+                <!-- Top Notification Badge -->
+                <div class="absolute top-3 right-3 z-10">
+                    <div class="relative bg-white/80 p-2 rounded-full shadow-md backdrop-blur-sm">
+                        <i class="fa-solid fa-bell text-gray-600 text-xs"></i>
+                        <span class="absolute -top-1 -right-1 bg-red-500 text-white text-[9px] font-bold px-1 rounded-full">1</span>
+                    </div>
+                </div>
+
+                <!-- Card Header/Image -->
+                <div class="bg-gray-100 h-48 flex items-center justify-center p-4 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=600&q=80" alt="Diseño UX/UI" class="w-full h-full object-cover">
+                </div>
+
+                <!-- Card Body -->
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold uppercase tracking-wide text-slate-800 mb-1">Diseño UX/UI</h3>
+                        <div class="flex items-center space-x-2 mb-3">
+                            <img src="https://i.pravatar.cc/100?img=11" alt="Instructor" class="w-6 h-6 rounded-full">
+                            <span class="text-xs font-semibold text-slate-700">Luis N. Ainsentaz</span>
+                        </div>
+
+                        <!-- Rating Stars -->
+                        <div class="flex text-amber-400 text-sm space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <!-- Progress Meta -->
+                        <div class="flex justify-between items-center text-xs text-slate-800 font-semibold mb-2">
+                            <span class="flex items-center gap-1"><i class="fa-regular fa-clock text-slate-600"></i> Duración</span>
+                            <span class="flex items-center gap-1"><i class="fa-regular fa-clock text-slate-600"></i> 30 min</span>
+                        </div>
+
+                        <!-- Progress Bar -->
+                        <div class="w-full bg-gray-200 h-2 rounded-full mb-6 overflow-hidden">
+                            <div class="bg-slate-700 h-2 rounded-full w-2/5"></div>
+                        </div>
+                    </div>
+
+                    <!-- Action Button -->
+                    <a href="#" class="block text-center bg-slate-700 hover:bg-slate-800 text-white text-xs font-bold uppercase tracking-wider py-3 rounded-lg shadow transition">
+                        Ver Detalles
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col justify-between border border-gray-100 relative">
+                <div class="absolute top-3 right-3 z-10">
+                    <div class="relative bg-white/80 p-2 rounded-full shadow-md backdrop-blur-sm">
+                        <i class="fa-solid fa-bell text-gray-600 text-xs"></i>
+                        <span class="absolute -top-1 -right-1 bg-red-500 text-white text-[9px] font-bold px-1 rounded-full">1</span>
+                    </div>
+                </div>
+
+                <div class="bg-gray-100 h-48 flex items-center justify-center p-4 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80" alt="Programación Web" class="w-full h-full object-cover">
+                </div>
+
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold uppercase tracking-wide text-slate-800 mb-1">Programación Web</h3>
+                        <div class="flex items-center space-x-2 mb-3">
+                            <img src="https://i.pravatar.cc/100?img=12" alt="Instructor" class="w-6 h-6 rounded-full">
+                            <span class="text-xs font-semibold text-slate-700">Instructor Web</span>
+                        </div>
+
+                        <div class="flex text-amber-400 text-sm space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star text-gray-300"></i>
+                        </div>
+
+                        <div class="flex justify-between items-center text-xs text-slate-800 font-semibold mb-2">
+                            <span class="flex items-center gap-1"><i class="fa-regular fa-clock text-slate-600"></i> Duración</span>
+                            <span class="flex items-center gap-1"><i class="fa-regular fa-clock text-slate-600"></i> 30 min</span>
+                        </div>
+
+                        <div class="w-full bg-gray-200 h-2 rounded-full mb-6 overflow-hidden">
+                            <div class="bg-slate-700 h-2 rounded-full w-3/5"></div>
+                        </div>
+                    </div>
+
+                    <a href="#" class="block text-center bg-slate-700 hover:bg-slate-800 text-white text-xs font-bold uppercase tracking-wider py-3 rounded-lg shadow transition">
+                        Ver Detalles
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col justify-between border border-gray-100 relative">
+                <div class="absolute top-3 right-3 z-10">
+                    <div class="relative bg-white/80 p-2 rounded-full shadow-md backdrop-blur-sm">
+                        <i class="fa-solid fa-bell text-gray-600 text-xs"></i>
+                        <span class="absolute -top-1 -right-1 bg-red-500 text-white text-[9px] font-bold px-1 rounded-full">1</span>
+                    </div>
+                </div>
+
+                <div class="bg-gray-100 h-48 flex items-center justify-center p-4 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=600&q=80" alt="Fotografía Digital" class="w-full h-full object-cover">
+                </div>
+
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold uppercase tracking-wide text-slate-800 mb-1">Fotografía Digital</h3>
+                        <div class="flex items-center space-x-2 mb-3">
+                            <img src="https://i.pravatar.cc/100?img=60" alt="Instructor" class="w-6 h-6 rounded-full">
+                            <span class="text-xs font-semibold text-slate-700">Fotografía Digital</span>
+                        </div>
+
+                        <div class="flex text-amber-400 text-sm space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <div class="flex justify-between items-center text-xs text-slate-800 font-semibold mb-2">
+                            <span class="flex items-center gap-1"><i class="fa-regular fa-clock text-slate-600"></i> Duración</span>
+                            <span class="flex items-center gap-1"><i class="fa-regular fa-clock text-slate-600"></i> 30 min</span>
+                        </div>
+
+                        <div class="w-full bg-gray-200 h-2 rounded-full mb-6 overflow-hidden">
+                            <div class="bg-slate-700 h-2 rounded-full w-4/5"></div>
+                        </div>
+                    </div>
+
+                    <a href="#" class="block text-center bg-slate-700 hover:bg-slate-800 text-white text-xs font-bold uppercase tracking-wider py-3 rounded-lg shadow transition">
+                        Ver Detalles
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col justify-between border border-gray-100 relative">
+                <div class="absolute top-3 right-3 z-10">
+                    <div class="relative bg-white/80 p-2 rounded-full shadow-md backdrop-blur-sm">
+                        <i class="fa-solid fa-bell text-gray-600 text-xs"></i>
+                        <span class="absolute -top-1 -right-1 bg-red-500 text-white text-[9px] font-bold px-1 rounded-full">1</span>
+                    </div>
+                </div>
+
+                <div class="bg-gray-100 h-48 flex items-center justify-center p-4 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=600&q=80" alt="Fotografía Digital" class="w-full h-full object-cover">
+                </div>
+
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold uppercase tracking-wide text-slate-800 mb-1">Fotografía Digital</h3>
+                        <div class="flex items-center space-x-2 mb-3">
+                            <img src="https://i.pravatar.cc/100?img=60" alt="Instructor" class="w-6 h-6 rounded-full">
+                            <span class="text-xs font-semibold text-slate-700">Fotografía Digital</span>
+                        </div>
+
+                        <div class="flex text-amber-400 text-sm space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <div class="flex justify-between items-center text-xs text-slate-800 font-semibold mb-2">
+                            <span class="flex items-center gap-1"><i class="fa-regular fa-clock text-slate-600"></i> Duración</span>
+                            <span class="flex items-center gap-1"><i class="fa-regular fa-clock text-slate-600"></i> 30 min</span>
+                        </div>
+
+                        <div class="w-full bg-gray-200 h-2 rounded-full mb-6 overflow-hidden">
+                            <div class="bg-slate-700 h-2 rounded-full w-4/5"></div>
+                        </div>
+                    </div>
+
+                    <a href="#" class="block text-center bg-slate-700 hover:bg-slate-800 text-white text-xs font-bold uppercase tracking-wider py-3 rounded-lg shadow transition">
+                        Ver Detalles
+                    </a>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
