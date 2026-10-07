@@ -1,0 +1,277 @@
+{% load static %}
+
+<section class="relative bg-gradient-to-r from-slate-900 via-slate-800 to-cyan-900 text-white rounded-3xl p-6 md:p-12 shadow-xl mb-10 overflow-hidden">
+
+    <!-- Notification Icons (Top Right) -->
+    <div class="absolute top-6 right-6 flex space-x-3 z-20">
+        <div class="relative bg-slate-700/60 p-2.5 rounded-full backdrop-blur-md cursor-pointer hover:bg-slate-700 transition">
+            <i class="fa-solid fa-bell text-gray-200 text-sm"></i>
+            <span class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">1</span>
+        </div>
+        <div class="relative bg-slate-700/60 p-2.5 rounded-full backdrop-blur-md cursor-pointer hover:bg-slate-700 transition">
+            <i class="fa-solid fa-envelope text-gray-200 text-sm"></i>
+            <span class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">1</span>
+        </div>
+    </div>
+
+    <!-- Arrows -->
+    <button id="carousel-prev"
+            class="absolute left-3 md:left-4 top-1/2 -translate-y-1/2 z-20
+                   text-gray-300 hover:text-white bg-slate-800/40 hover:bg-slate-700/70
+                   backdrop-blur-sm rounded-full w-10 h-10 flex items-center justify-center
+                   transition-all duration-200 active:scale-90">
+        <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <button id="carousel-next"
+            class="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 z-20
+                   text-gray-300 hover:text-white bg-slate-800/40 hover:bg-slate-700/70
+                   backdrop-blur-sm rounded-full w-10 h-10 flex items-center justify-center
+                   transition-all duration-200 active:scale-90">
+        <i class="fa-solid fa-chevron-right"></i>
+    </button>
+
+    <!-- Slides Container -->
+    <div id="carousel" class="relative w-full">
+
+        <!-- Slide 1: IA -->
+        <div class="carousel-slide grid grid-cols-1 lg:grid-cols-12 gap-8 items-center px-4 md:px-10 transition-opacity duration-500">
+            <div class="lg:col-span-7 space-y-4">
+                <span class="inline-block text-xs font-semibold tracking-wider uppercase text-cyan-300 bg-cyan-500/10 px-3 py-1 rounded-full">
+                    Curso Destacado
+                </span>
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">INTRODUCCIÓN A LA IA</h2>
+                <p class="text-gray-300 text-sm leading-relaxed max-w-lg">
+                    Aprende los fundamentos de la inteligencia artificial, machine learning y redes neuronales desde cero con proyectos prácticos.
+                </p>
+                <div class="flex items-center gap-4 pt-2 text-sm text-gray-300">
+                    <span><i class="fa-solid fa-clock mr-1 text-cyan-400"></i>12 semanas</span>
+                    <span><i class="fa-solid fa-signal mr-1 text-cyan-400"></i>Principiante</span>
+                </div>
+                <div class="pt-3">
+                    <a href="#" class="inline-block bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold uppercase tracking-wider py-3 px-8 rounded-lg shadow-md shadow-sky-500/30 hover:shadow-lg transition-all duration-200 active:scale-95">
+                        Inscribirse
+                    </a>
+                </div>
+            </div>
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="relative w-full max-w-sm rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80"
+                         alt="Curso de IA"
+                         class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 flex space-x-2 text-cyan-200 text-xs">
+                        <span class="bg-slate-900/80 px-2 py-1 rounded">&lt;/&gt;</span>
+                        <span class="bg-slate-900/80 px-2 py-1 rounded"><i class="fa-solid fa-brain"></i></span>
+                        <span class="bg-slate-900/80 px-2 py-1 rounded"><i class="fa-solid fa-robot"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Desarrollo Web -->
+        <div class="carousel-slide hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center px-4 md:px-10 transition-opacity duration-500">
+            <div class="lg:col-span-7 space-y-4">
+                <span class="inline-block text-xs font-semibold tracking-wider uppercase text-emerald-300 bg-emerald-500/10 px-3 py-1 rounded-full">
+                    Nuevo Curso
+                </span>
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">DESARROLLO WEB FULL STACK</h2>
+                <p class="text-gray-300 text-sm leading-relaxed max-w-lg">
+                    Domina HTML, CSS, JavaScript, React y Node.js creando aplicaciones web reales de principio a fin.
+                </p>
+                <div class="flex items-center gap-4 pt-2 text-sm text-gray-300">
+                    <span><i class="fa-solid fa-clock mr-1 text-emerald-400"></i>16 semanas</span>
+                    <span><i class="fa-solid fa-signal mr-1 text-emerald-400"></i>Intermedio</span>
+                </div>
+                <div class="pt-3">
+                    <a href="#" class="inline-block bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider py-3 px-8 rounded-lg shadow-md shadow-emerald-500/30 hover:shadow-lg transition-all duration-200 active:scale-95">
+                        Inscribirse
+                    </a>
+                </div>
+            </div>
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="relative w-full max-w-sm rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
+                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&q=80"
+                         alt="Curso de Desarrollo Web"
+                         class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 flex space-x-2 text-emerald-200 text-xs">
+                        <span class="bg-slate-900/80 px-2 py-1 rounded"><i class="fa-brands fa-html5"></i></span>
+                        <span class="bg-slate-900/80 px-2 py-1 rounded"><i class="fa-brands fa-js"></i></span>
+                        <span class="bg-slate-900/80 px-2 py-1 rounded"><i class="fa-brands fa-react"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Data Science -->
+        <div class="carousel-slide hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center px-4 md:px-10 transition-opacity duration-500">
+            <div class="lg:col-span-7 space-y-4">
+                <span class="inline-block text-xs font-semibold tracking-wider uppercase text-purple-300 bg-purple-500/10 px-3 py-1 rounded-full">
+                    Más Popular
+                </span>
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">DATA SCIENCE CON PYTHON</h2>
+                <p class="text-gray-300 text-sm leading-relaxed max-w-lg">
+                    Analiza datos, crea visualizaciones impactantes y construye modelos predictivos con Python, Pandas y Scikit-learn.
+                </p>
+                <div class="flex items-center gap-4 pt-2 text-sm text-gray-300">
+                    <span><i class="fa-solid fa-clock mr-1 text-purple-400"></i>14 semanas</span>
+                    <span><i class="fa-solid fa-signal mr-1 text-purple-400"></i>Intermedio</span>
+                </div>
+                <div class="pt-3">
+                    <a href="#" class="inline-block bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold uppercase tracking-wider py-3 px-8 rounded-lg shadow-md shadow-purple-500/30 hover:shadow-lg transition-all duration-200 active:scale-95">
+                        Inscribirse
+                    </a>
+                </div>
+            </div>
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="relative w-full max-w-sm rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
+                         alt="Curso de Data Science"
+                         class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 flex space-x-2 text-purple-200 text-xs">
+                        <span class="bg-slate-900/80 px-2 py-1 rounded"><i class="fa-brands fa-python"></i></span>
+                        <span class="bg-slate-900/80 px-2 py-1 rounded"><i class="fa-solid fa-chart-line"></i></span>
+                        <span class="bg-slate-900/80 px-2 py-1 rounded"><i class="fa-solid fa-database"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Ciberseguridad -->
+        <div class="carousel-slide hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center px-4 md:px-10 transition-opacity duration-500">
+            <div class="lg:col-span-7 space-y-4">
+                <span class="inline-block text-xs font-semibold tracking-wider uppercase text-red-300 bg-red-500/10 px-3 py-1 rounded-full">
+                    Curso Avanzado
+                </span>
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">CIBERSEGURIDAD Y HACKING ÉTICO</h2>
+                <p class="text-gray-300 text-sm leading-relaxed max-w-lg">
+                    Aprende a proteger sistemas, detectar vulnerabilidades y realizar auditorías de seguridad como un profesional.
+                </p>
+                <div class="flex items-center gap-4 pt-2 text-sm text-gray-300">
+                    <span><i class="fa-solid fa-clock mr-1 text-red-400"></i>10 semanas</span>
+                    <span><i class="fa-solid fa-signal mr-1 text-red-400"></i>Avanzado</span>
+                </div>
+                <div class="pt-3">
+                    <a href="#" class="inline-block bg-red-600 hover:bg-red-500 text-white text-xs font-bold uppercase tracking-wider py-3 px-8 rounded-lg shadow-md shadow-red-500/30 hover:shadow-lg transition-all duration-200 active:scale-95">
+                        Inscribirse
+                    </a>
+                </div>
+            </div>
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="relative w-full max-w-sm rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80"
+                         alt="Curso de Ciberseguridad"
+                         class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 flex space-x-2 text-red-200 text-xs">
+                        <span class="bg-slate-900/80 px-2 py-1 rounded"><i class="fa-solid fa-shield-halved"></i></span>
+                        <span class="bg-slate-900/80 px-2 py-1 rounded"><i class="fa-solid fa-lock"></i></span>
+                        <span class="bg-slate-900/80 px-2 py-1 rounded"><i class="fa-solid fa-user-secret"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Dots Pagination -->
+    <div id="carousel-dots" class="flex justify-center space-x-2 mt-8 relative z-10">
+        <button data-index="0" class="carousel-dot w-2.5 h-2.5 rounded-full transition-all duration-300 bg-cyan-400 w-6"></button>
+        <button data-index="1" class="carousel-dot w-2.5 h-2.5 rounded-full transition-all duration-300 bg-gray-400 hover:bg-gray-300"></button>
+        <button data-index="2" class="carousel-dot w-2.5 h-2.5 rounded-full transition-all duration-300 bg-gray-400 hover:bg-gray-300"></button>
+        <button data-index="3" class="carousel-dot w-2.5 h-2.5 rounded-full transition-all duration-300 bg-gray-400 hover:bg-gray-300"></button>
+    </div>
+</section>
+
+<!-- 🎯 JavaScript del carrusel -->
+<script>
+(function () {
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.carousel-dot');
+    const prevBtn = document.getElementById('carousel-prev');
+    const nextBtn = document.getElementById('carousel-next');
+    const container = document.getElementById('carousel');
+    let current = 0;
+    let autoplay;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            if (i === index) {
+                slide.classList.remove('hidden');
+                slide.classList.add('grid');
+                slide.style.opacity = '0';
+                requestAnimationFrame(() => slide.style.opacity = '1');
+            } else {
+                slide.classList.add('hidden');
+                slide.classList.remove('grid');
+            }
+        });
+
+        dots.forEach((dot, i) => {
+            if (i === index) {
+                dot.classList.remove('bg-gray-400', 'w-2.5');
+                dot.classList.add('bg-cyan-400', 'w-6');
+            } else {
+                dot.classList.remove('bg-cyan-400', 'w-6');
+                dot.classList.add('bg-gray-400', 'w-2.5');
+            }
+        });
+
+        current = index;
+    }
+
+    function nextSlide() {
+        showSlide((current + 1) % slides.length);
+    }
+
+    function prevSlide() {
+        showSlide((current - 1 + slides.length) % slides.length);
+    }
+
+    // Controles
+    nextBtn.addEventListener('click', () => { nextSlide(); resetAutoplay(); });
+    prevBtn.addEventListener('click', () => { prevSlide(); resetAutoplay(); });
+
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            showSlide(parseInt(dot.dataset.index));
+            resetAutoplay();
+        });
+    });
+
+    // Autoplay
+    function startAutoplay() {
+        autoplay = setInterval(nextSlide, 5000);
+    }
+    function resetAutoplay() {
+        clearInterval(autoplay);
+        startAutoplay();
+    }
+
+    // Pausar al pasar el mouse
+    container.addEventListener('mouseenter', () => clearInterval(autoplay));
+    container.addEventListener('mouseleave', startAutoplay);
+
+    // Soporte táctil (swipe)
+    let startX = 0;
+    container.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+    container.addEventListener('touchend', e => {
+        const diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 50) {
+            diff > 0 ? nextSlide() : prevSlide();
+            resetAutoplay();
+        }
+    });
+
+    // Teclado
+    document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight') { nextSlide(); resetAutoplay(); }
+        if (e.key === 'ArrowLeft')  { prevSlide(); resetAutoplay(); }
+    });
+
+    // Init
+    showSlide(0);
+    startAutoplay();
+})();
+</script>

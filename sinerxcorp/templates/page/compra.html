@@ -1,0 +1,390 @@
+{% extends "base/head.html" %}
+
+{% block title %}Comprar Curso{% endblock %}
+
+{% block content %}
+
+{% include 'include/header.html' %}
+
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-10 font-sans">
+
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-xs text-gray-500 mb-6">
+        <a href="#" class="hover:text-blue-600 transition">Inicio</a>
+        <i class="fa-solid fa-chevron-right text-[9px] text-gray-300"></i>
+        <a href="#" class="hover:text-blue-600 transition">Catálogo</a>
+        <i class="fa-solid fa-chevron-right text-[9px] text-gray-300"></i>
+        <span class="text-gray-800 font-semibold truncate max-w-[200px]">
+            {{ curso.titulo|default:"Desarrollo Web Full Stack" }}
+        </span>
+    </nav>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-start">
+
+        <!-- ==================== COLUMNA IZQUIERDA ==================== -->
+        <div class="lg:col-span-2 space-y-6">
+
+            <!-- Tarjeta 1: Portada y Título -->
+            <div class="bg-white rounded-2xl p-5 md:p-6 shadow-sm border border-gray-100
+                        flex flex-col md:flex-row gap-6 items-center md:items-start
+                        hover:shadow-md transition-shadow duration-300">
+
+                <!-- Portada -->
+                <div class="w-full md:w-2/5 aspect-video rounded-xl overflow-hidden
+                            bg-gray-100 flex-shrink-0 relative group">
+                    <img src="{{ curso.portada.url|default:'/static/img/login.jpg' }}"
+                         alt="{{ curso.titulo }}"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute top-3 left-3 bg-blue-600 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-md">
+                        Curso
+                    </span>
+                </div>
+
+                <!-- Info -->
+                <div class="w-full md:w-3/5 space-y-4">
+                    <h1 class="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight">
+                        {{ curso.titulo|default:"Desarrollo Web Full Stack con Python y Django" }}
+                    </h1>
+
+                    <!-- Rating -->
+                    <div class="flex flex-wrap items-center gap-3">
+                        <div class="flex items-center gap-1">
+                            <i class="fa-solid fa-star text-amber-400 text-sm"></i>
+                            <i class="fa-solid fa-star text-amber-400 text-sm"></i>
+                            <i class="fa-solid fa-star text-amber-400 text-sm"></i>
+                            <i class="fa-solid fa-star text-amber-400 text-sm"></i>
+                            <i class="fa-solid fa-star-half-stroke text-amber-400 text-sm"></i>
+                            <span class="text-xs font-bold text-gray-800 ml-1">4.8</span>
+                        </div>
+                        <span class="text-xs text-gray-500">(1,245 valoraciones)</span>
+                        <span class="text-xs text-gray-500 flex items-center gap-1">
+                            <i class="fa-solid fa-user-group text-[10px]"></i> 3,420 estudiantes
+                        </span>
+                    </div>
+
+                    <!-- Instructor -->
+                    <div class="flex items-center gap-3 pt-1">
+                        <img src="/static/img/logo.jpeg" alt="Instructor"
+                             class="w-11 h-11 rounded-full object-cover border-2 border-white shadow-sm ring-2 ring-gray-100">
+                        <div>
+                            <p class="text-[10px] text-gray-500 uppercase tracking-wider font-semibold">Instructor</p>
+                            <p class="text-sm font-bold text-gray-800">
+                                {{ curso.instructor.get_full_name|default:"Luis Navarro" }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Meta info -->
+                    <div class="flex flex-wrap items-center gap-4 pt-3 border-t border-gray-100 text-xs text-gray-600">
+                        <span class="flex items-center gap-1.5">
+                            <i class="fa-regular fa-clock text-blue-500"></i> 42 horas
+                        </span>
+                        <span class="flex items-center gap-1.5">
+                            <i class="fa-solid fa-signal text-blue-500"></i> Intermedio
+                        </span>
+                        <span class="flex items-center gap-1.5">
+                            <i class="fa-regular fa-circle-check text-blue-500"></i> Certificado
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2: ¿Qué aprenderás? -->
+            <div class="bg-white rounded-2xl p-5 md:p-6 shadow-sm border border-gray-100 space-y-5">
+                <div>
+                    <h2 class="text-lg md:text-xl font-bold text-gray-900">¿Qué aprenderás en el curso?</h2>
+                    <p class="text-sm text-gray-500 mt-1">Aprende habilidades clave que te harán destacar como desarrollador.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3">
+                    <div class="flex items-start gap-3 group">
+                        <span class="inline-flex items-center justify-center w-5 h-5 rounded-full
+                                     bg-emerald-100 text-emerald-600 text-[10px] font-bold mt-0.5
+                                     group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-200">
+                            <i class="fa-solid fa-check"></i>
+                        </span>
+                        <span class="text-sm text-gray-700">Dominar Python avanzado</span>
+                    </div>
+                    <div class="flex items-start gap-3 group">
+                        <span class="inline-flex items-center justify-center w-5 h-5 rounded-full
+                                     bg-emerald-100 text-emerald-600 text-[10px] font-bold mt-0.5
+                                     group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-200">
+                            <i class="fa-solid fa-check"></i>
+                        </span>
+                        <span class="text-sm text-gray-700">Crear bases de datos con MySQL</span>
+                    </div>
+                    <div class="flex items-start gap-3 group">
+                        <span class="inline-flex items-center justify-center w-5 h-5 rounded-full
+                                     bg-emerald-100 text-emerald-600 text-[10px] font-bold mt-0.5
+                                     group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-200">
+                            <i class="fa-solid fa-check"></i>
+                        </span>
+                        <span class="text-sm text-gray-700">Integrar APIs externas</span>
+                    </div>
+                    <div class="flex items-start gap-3 group">
+                        <span class="inline-flex items-center justify-center w-5 h-5 rounded-full
+                                     bg-emerald-100 text-emerald-600 text-[10px] font-bold mt-0.5
+                                     group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-200">
+                            <i class="fa-solid fa-check"></i>
+                        </span>
+                        <span class="text-sm text-gray-700">Dominar arquitectura de software con Django</span>
+                    </div>
+                    <div class="flex items-start gap-3 group">
+                        <span class="inline-flex items-center justify-center w-5 h-5 rounded-full
+                                     bg-emerald-100 text-emerald-600 text-[10px] font-bold mt-0.5
+                                     group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-200">
+                            <i class="fa-solid fa-check"></i>
+                        </span>
+                        <span class="text-sm text-gray-700">Desplegar aplicaciones web para producción</span>
+                    </div>
+                    <div class="flex items-start gap-3 group">
+                        <span class="inline-flex items-center justify-center w-5 h-5 rounded-full
+                                     bg-emerald-100 text-emerald-600 text-[10px] font-bold mt-0.5
+                                     group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-200">
+                            <i class="fa-solid fa-check"></i>
+                        </span>
+                        <span class="text-sm text-gray-700">Prácticas con proyectos reales</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3: Temario / Contenido -->
+            <div class="bg-white rounded-2xl p-5 md:p-6 shadow-sm border border-gray-100 space-y-4">
+                <div class="flex items-center justify-between">
+                    <h2 class="text-lg md:text-xl font-bold text-gray-900">Contenido del curso</h2>
+                    <span class="text-xs font-semibold text-gray-500">6 módulos · 42h</span>
+                </div>
+
+                <div class="space-y-2">
+                    <!-- Módulo -->
+                    <details class="group bg-gray-50 rounded-xl border border-gray-100 overflow-hidden">
+                        <summary class="flex items-center justify-between p-3.5 cursor-pointer
+                                        hover:bg-gray-100 transition list-none">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-chevron-right text-xs text-gray-400
+                                          group-open:rotate-90 transition-transform duration-200"></i>
+                                <span class="text-sm font-semibold text-gray-800">1. Introducción a Django</span>
+                            </div>
+                            <span class="text-xs text-gray-500">3 lecciones · 6h</span>
+                        </summary>
+                        <ul class="px-10 pb-3 space-y-2 text-sm text-gray-600">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-regular fa-circle-play text-blue-500 text-xs"></i>
+                                ¿Qué es Django y por qué usarlo?
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-regular fa-circle-play text-blue-500 text-xs"></i>
+                                Instalación y primer proyecto
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-regular fa-circle-play text-blue-500 text-xs"></i>
+                                Estructura de un proyecto Django
+                            </li>
+                        </ul>
+                    </details>
+
+                    <details class="group bg-gray-50 rounded-xl border border-gray-100 overflow-hidden">
+                        <summary class="flex items-center justify-between p-3.5 cursor-pointer
+                                        hover:bg-gray-100 transition list-none">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-chevron-right text-xs text-gray-400
+                                          group-open:rotate-90 transition-transform duration-200"></i>
+                                <span class="text-sm font-semibold text-gray-800">2. Modelos y Bases de Datos</span>
+                            </div>
+                            <span class="text-xs text-gray-500">4 lecciones · 8h</span>
+                        </summary>
+                        <ul class="px-10 pb-3 space-y-2 text-sm text-gray-600">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-regular fa-circle-play text-blue-500 text-xs"></i>
+                                Modelos y migraciones
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-regular fa-circle-play text-blue-500 text-xs"></i>
+                                Consultas con el ORM
+                            </li>
+                        </ul>
+                    </details>
+
+                    <details class="group bg-gray-50 rounded-xl border border-gray-100 overflow-hidden">
+                        <summary class="flex items-center justify-between p-3.5 cursor-pointer
+                                        hover:bg-gray-100 transition list-none">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-chevron-right text-xs text-gray-400
+                                          group-open:rotate-90 transition-transform duration-200"></i>
+                                <span class="text-sm font-semibold text-gray-800">3. Vistas y Templates</span>
+                            </div>
+                            <span class="text-xs text-gray-500">5 lecciones · 10h</span>
+                        </summary>
+                    </details>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ==================== COLUMNA DERECHA ==================== -->
+        <aside class="space-y-6 lg:sticky lg:top-24">
+
+            <!-- Caja de Compra Principal -->
+            <div class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900
+                        text-white rounded-2xl p-6 shadow-xl shadow-slate-900/20
+                        border border-slate-800 space-y-5 relative overflow-hidden">
+
+                <!-- Decoración de fondo -->
+                <div class="absolute -top-20 -right-20 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -bottom-20 -left-20 w-40 h-40 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="relative space-y-5">
+
+                    <!-- Precio -->
+                    <div>
+                        <div class="flex items-end gap-2">
+                            <span class="text-3xl md:text-4xl font-extrabold tracking-tight">$99</span>
+                            <span class="text-lg font-bold text-slate-300 mb-1">.99</span>
+                            <span class="text-xs font-semibold text-slate-400 mb-1.5">USD</span>
+                        </div>
+                        <div class="flex items-center gap-2 mt-1">
+                            <span class="text-sm text-slate-400 line-through">$199.99</span>
+                            <span class="text-[11px] font-bold bg-red-500/20 text-red-300 px-2 py-0.5 rounded-full">
+                                -50% OFF
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Countdown / Urgencia -->
+                    <div class="flex items-center gap-2 bg-orange-500/10 border border-orange-500/30
+                                rounded-lg px-3 py-2">
+                        <i class="fa-solid fa-fire text-orange-400 text-sm"></i>
+                        <p class="text-[11px] text-orange-200 font-medium">
+                            Oferta termina en <span class="font-bold">2 días</span>
+                        </p>
+                    </div>
+
+                    <!-- Beneficios -->
+                    <ul class="text-sm text-slate-300 space-y-2.5">
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-infinity text-emerald-400 text-xs w-4"></i>
+                            Acceso ilimitado de por vida
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-certificate text-emerald-400 text-xs w-4"></i>
+                            Certificado de finalización
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-users text-emerald-400 text-xs w-4"></i>
+                            Soporte de la comunidad
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-mobile-screen text-emerald-400 text-xs w-4"></i>
+                            Acceso desde móvil y TV
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-rotate-left text-emerald-400 text-xs w-4"></i>
+                            Garantía de 30 días
+                        </li>
+                    </ul>
+
+                    <!-- Botón principal -->
+                    <a href="{% url "method_payment" %}"
+                       class="group block w-full text-center
+                              bg-gradient-to-r from-orange-500 to-orange-600
+                              hover:from-orange-600 hover:to-orange-700
+                              text-white font-bold py-3.5 px-6 rounded-xl
+                              shadow-lg shadow-orange-500/30 hover:shadow-xl hover:shadow-orange-500/40
+                              transition-all duration-200 active:scale-[0.98]">
+                        <span class="inline-flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-cart-shopping text-sm"></i>
+                            Comprar ahora
+                        </span>
+                    </a>
+
+                    <!-- Botón secundario -->
+                    <button class="w-full text-center text-xs font-semibold text-slate-300
+                                   hover:text-white transition-colors py-1">
+                        <i class="fa-regular fa-heart mr-1"></i> Añadir a favoritos
+                    </button>
+
+                    <!-- Métodos de pago -->
+                    <div class="pt-4 border-t border-slate-800">
+                        <p class="text-[11px] text-slate-400 text-center mb-2.5">Pago 100% seguro</p>
+                        <div class="flex justify-center gap-2">
+                            <span class="px-2.5 py-1.5 bg-slate-800/80 rounded-md text-[10px] font-bold text-slate-300 border border-slate-700">VISA</span>
+                            <span class="px-2.5 py-1.5 bg-slate-800/80 rounded-md text-[10px] font-bold text-slate-300 border border-slate-700">MasterCard</span>
+                            <span class="px-2.5 py-1.5 bg-slate-800/80 rounded-md text-[10px] font-bold text-slate-300 border border-slate-700">PayPal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Requisitos y Vista Previa -->
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 space-y-4">
+                <div>
+                    <h3 class="font-bold text-gray-900 text-base flex items-center gap-2">
+                        <i class="fa-solid fa-list-check text-blue-500 text-sm"></i>
+                        Requisitos previos
+                    </h3>
+                    <ul class="mt-3 space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-gray-400 mt-2 flex-shrink-0"></span>
+                            Conocimientos básicos de HTML y CSS
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-gray-400 mt-2 flex-shrink-0"></span>
+                            Nociones básicas de programación
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-gray-400 mt-2 flex-shrink-0"></span>
+                            Computadora con acceso a internet
+                        </li>
+                    </ul>
+                </div>
+
+                <a href="#"
+                   class="flex items-center gap-3 p-3 rounded-xl
+                          bg-blue-50 hover:bg-blue-100 border border-blue-100
+                          transition-all duration-200 group">
+                    <span class="w-9 h-9 rounded-full bg-blue-600 text-white
+                                 flex items-center justify-center flex-shrink-0
+                                 shadow-md shadow-blue-500/30
+                                 group-hover:scale-110 transition-transform duration-200">
+                        <i class="fa-solid fa-play text-xs ml-0.5"></i>
+                    </span>
+                    <div class="min-w-0">
+                        <p class="text-sm font-bold text-blue-900">Vista previa gratis</p>
+                        <p class="text-[11px] text-blue-700">Lección 1 · 12:45 min</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Compartir -->
+            <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
+                <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Compartir curso</p>
+                <div class="flex items-center gap-2">
+                    <a href="#" class="w-9 h-9 rounded-full bg-gray-100 hover:bg-blue-600 hover:text-white
+                                       text-gray-600 flex items-center justify-center transition-all duration-200">
+                        <i class="fa-brands fa-facebook-f text-sm"></i>
+                    </a>
+                    <a href="#" class="w-9 h-9 rounded-full bg-gray-100 hover:bg-sky-500 hover:text-white
+                                       text-gray-600 flex items-center justify-center transition-all duration-200">
+                        <i class="fa-brands fa-twitter text-sm"></i>
+                    </a>
+                    <a href="#" class="w-9 h-9 rounded-full bg-gray-100 hover:bg-emerald-600 hover:text-white
+                                       text-gray-600 flex items-center justify-center transition-all duration-200">
+                        <i class="fa-brands fa-whatsapp text-sm"></i>
+                    </a>
+                    <a href="#" class="w-9 h-9 rounded-full bg-gray-100 hover:bg-blue-700 hover:text-white
+                                       text-gray-600 flex items-center justify-center transition-all duration-200">
+                        <i class="fa-brands fa-linkedin-in text-sm"></i>
+                    </a>
+                    <button class="w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-800 hover:text-white
+                                   text-gray-600 flex items-center justify-center transition-all duration-200">
+                        <i class="fa-solid fa-link text-sm"></i>
+                    </button>
+                </div>
+            </div>
+
+        </aside>
+
+    </div>
+</main>
+
+{% endblock %}
