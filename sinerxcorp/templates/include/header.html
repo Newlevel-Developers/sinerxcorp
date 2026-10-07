@@ -1,0 +1,38 @@
+{% load static %}
+<!-- Header / Navbar -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-8xl mx-auto px-6 py-3 flex items-center justify-between">
+            <!-- Logo & Title -->
+            <div class="flex items-center space-x-3">
+                <img src="{% static 'img/logo.jpeg' %}" alt="Logo" class="w-50 h-20">
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex space-x-8 font-bold text-sm text-slate-700 uppercase tracking-wide">
+                <a href="#" class="border-b-2 border-slate-700 pb-1">Inicio</a>
+                <a href="#" class="hover:text-slate-900 transition">Catálogo</a>
+                <a href="#" class="hover:text-slate-900 transition">Progreso</a>
+            </nav>
+
+            <!-- Search Bar & User Profile -->
+            <div class="flex items-center space-x-6">
+                <!-- Search -->
+                <div class="relative hidden sm:block">
+                    <input type="text" placeholder="buscar" class="bg-gray-200 text-gray-600 rounded-full pl-4 pr-10 py-1.5 text-sm focus:outline-none w-48">
+                    <i class="fa-solid fa-magnifying-glass absolute right-3 top-2.5 text-gray-400 text-sm"></i>
+                </div>
+
+                <!-- User Dropdown -->
+                {% if user.is_authenticated %}
+                        <div class="flex items-center space-x-2 cursor-pointer">
+                            <span class="font-bold text-sm uppercase text-slate-800">Luis N.</span>
+                            <img src="https://i.pravatar.cc/100?img=33" alt="Avatar" class="w-9 h-9 rounded-full object-cover">
+                            <i class="fa-solid fa-caret-down text-xs text-slate-600"></i>
+                        </div>
+                    {% else %}
+                        <a href="{% url 'login' %}" class="bg-blue-600 text-white px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-blue-700 transition">Iniciar Sesión</a>
+                        <a href="{% url 'register' %}" class="bg-blue-600 text-white px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-blue-700 transition">Registrarme</a>
+                    {% endif %} 
+            </div>
+        </div>
+    </header>

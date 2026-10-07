@@ -11,14 +11,18 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
 from pathlib import Path
-
+import os
+from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+STATIC_URL = 'static/'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/
-
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # If using Path (Django 3.1+)
+    # os.path.join(BASE_DIR, 'static'),  # Alternative if using os.path
+]
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-x*g*z%u080ys(dlo4$0w1)go_b)da@zc2hjn*%)=)x=i#ujgt4'
 
@@ -75,8 +79,17 @@ WSGI_APPLICATION = 'panel.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': config('DB_NAME', default='defaultdb'),
+        'USER': config('DB_USER', default='avnadmin'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
+        'PORT': config('DB_PORT', default='16552'),
+        'OPTIONS': {
+            'ssl': {
+                'ssl_mode': 'REQUIRED',
+            },
+        },
     }
 }
 
@@ -126,3 +139,4 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
+

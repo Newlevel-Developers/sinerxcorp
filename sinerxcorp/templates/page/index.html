@@ -1,57 +1,7 @@
+{% extends 'base/head.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academia Online</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome Font Icons CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-    </style>
-</head>
-<body class="bg-gray-100 text-gray-800">
-
-    <!-- Header / Navbar -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-8xl mx-auto px-6 py-3 flex items-center justify-between">
-            <!-- Logo & Title -->
-            <div class="flex items-center space-x-3">
-                <i class="fa-solid fa-graduation-cap text-3xl text-slate-700"></i>
-                <div class="font-bold text-slate-800 text-sm leading-tight uppercase tracking-wider">
-                    SinerCorp
-                </div>
-            </div>
-
-            <!-- Navigation Links -->
-            <nav class="hidden md:flex space-x-8 font-bold text-sm text-slate-700 uppercase tracking-wide">
-                <a href="#" class="border-b-2 border-slate-700 pb-1">Inicio</a>
-                <a href="#" class="hover:text-slate-900 transition">Catálogo</a>
-                <a href="#" class="hover:text-slate-900 transition">Progreso</a>
-            </nav>
-
-            <!-- Search Bar & User Profile -->
-            <div class="flex items-center space-x-6">
-                <!-- Search -->
-                <div class="relative hidden sm:block">
-                    <input type="text" placeholder="buscar" class="bg-gray-200 text-gray-600 rounded-full pl-4 pr-10 py-1.5 text-sm focus:outline-none w-48">
-                    <i class="fa-solid fa-magnifying-glass absolute right-3 top-2.5 text-gray-400 text-sm"></i>
-                </div>
-
-                <!-- User Dropdown -->
-                <div class="flex items-center space-x-2 cursor-pointer">
-                    <span class="font-bold text-sm uppercase text-slate-800">Luis N.</span>
-                    <img src="https://i.pravatar.cc/100?img=33" alt="Avatar" class="w-9 h-9 rounded-full object-cover">
-                    <i class="fa-solid fa-caret-down text-xs text-slate-600"></i>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Content Container -->
+    {% block content %}
+    {% include 'include/header.html' %}
     <main class="max-w-8xl mx-auto px-6 py-8">
 
         <!-- Banner Hero / Curso Destacado -->
@@ -309,6 +259,6 @@
         </section>
 
     </main>
+    
+    {% endblock %}
 
-</body>
-</html>
