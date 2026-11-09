@@ -79,16 +79,14 @@ WSGI_APPLICATION = 'panel.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': config('DB_NAME', default='defaultdb'),
-        'USER': config('DB_USER', default='avnadmin'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('DB_NAME', default='sinexcorp'),
+        'USER': config('DB_USER', default='postgres'),
         'PASSWORD': config('DB_PASSWORD'),
         'HOST': config('DB_HOST'),
-        'PORT': config('DB_PORT', default='16552'),
+        'PORT': config('DB_PORT', default='5432'),
         'OPTIONS': {
-            'ssl': {
-                'ssl_mode': 'REQUIRED',
-            },
+            'options': '-c client_encoding=utf8',
         },
     }
 }
