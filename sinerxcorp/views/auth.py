@@ -14,4 +14,4 @@ def login_user(request):
         else:
             return render(request, 'login.html', {'error': 'Usuario o contraseña incorrectos'})
     except User.DoesNotExist:
-        return None
+        return redirect('index')
