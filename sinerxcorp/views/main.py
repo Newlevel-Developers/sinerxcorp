@@ -8,3 +8,6 @@ def login_views(request):
 
 def register(request):
     return render(request, 'page/registrar_usuarios.html')
+
+def dashboard(request):
+    return render(request, 'page/dashboard.html')
