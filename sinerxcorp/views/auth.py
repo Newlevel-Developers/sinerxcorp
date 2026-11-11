@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login,logout
 from django.shortcuts import redirect, render
 #funcion de incio de sesion
 def login_user(request):
@@ -13,5 +13,12 @@ def login_user(request):
             return redirect('dashboard')
         else:
             return render(request, 'login.html', {'error': 'Usuario o contraseña incorrectos'})
+    except User.DoesNotExist:
+        return redirect('index')
+    
+def logout_user(request):
+    try: 
+        logout(request)
+        return redirect('index')
     except User.DoesNotExist:
         return redirect('index')

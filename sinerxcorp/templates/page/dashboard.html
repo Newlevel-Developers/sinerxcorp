@@ -3,23 +3,41 @@
 
 {% block content %}
 <div class="min-h-screen bg-slate-50 dark:bg-slate-950 flex flex-col">
-    
-    <!-- Header en la parte superior -->
+
     {% include 'include/header.html' %}
 
-    <!-- Layout principal (Sidebar + Contenido) -->
-    <div class="flex flex-1">
-        
-        <!-- Sidebar a la izquierda -->
+    <div class="flex flex-1 relative">
+
         {% include 'include/sidebar.html' %}
 
-        <!-- Área de contenido principal -->
-        <main class="flex-1 p-6">
-            <h1 class="text-2xl font-bold text-slate-800 dark:text-white mb-4">Panel de Control</h1>
-            <p class="text-slate-600 dark:text-slate-400">Aquí irá el contenido principal de tu aplicación.</p>
-        </main>
-        
-    </div>
+        <!-- Contenido principal -->
+        <main class="flex-1 p-4 sm:p-6 lg:p-8 min-w-0">
+            <div class="max-w-7xl mx-auto">
+                <h1 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-800 dark:text-white mb-4">
+                    Panel de Control
+                </h1>
+                <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400">
+                    Aquí irá el contenido principal de tu aplicación.
+                </p>
 
+                <!-- Ejemplo de grid responsivo -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+                    <div class="bg-white dark:bg-slate-900 rounded-xl p-5 shadow-sm border border-slate-100 dark:border-slate-800">
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Proyectos</p>
+                        <p class="text-2xl font-bold text-slate-800 dark:text-white mt-1">12</p>
+                    </div>
+                    <div class="bg-white dark:bg-slate-900 rounded-xl p-5 shadow-sm border border-slate-100 dark:border-slate-800">
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Clientes</p>
+                        <p class="text-2xl font-bold text-slate-800 dark:text-white mt-1">48</p>
+                    </div>
+                    <div class="bg-white dark:bg-slate-900 rounded-xl p-5 shadow-sm border border-slate-100 dark:border-slate-800">
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Ingresos</p>
+                        <p class="text-2xl font-bold text-slate-800 dark:text-white mt-1">$2,340</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </div>
 </div>
 {% endblock %}
